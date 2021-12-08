@@ -40,7 +40,7 @@ static int			ft_count_splits_str(const char *str, char c)
 	return (count);
 }
 
-static void			*ft_tabledel(char **array, int i)
+static void			*ft_tabledel(char **array, int i)		// aufräumen wenn Programm fehler wirft
 {
 	int x;
 
@@ -49,10 +49,10 @@ static void			*ft_tabledel(char **array, int i)
 	{
 		while (x < i)
 		{
-			free(array[x]);
+			free(array[x]);									// erst strings freigeben
 			x++;
 		}
-		free(array);
+		free(array);										// dann Liste von pointern auf die strings
 	}
 	return (NULL);
 }
@@ -76,13 +76,13 @@ char				**ft_split(char const *s, char c)
 		{
 			next = ft_find_next_str(s, c, 0);					// pointer zum Anfang jedes neuen strings
 			result[i] = ft_substr(s, 0, next - s);				// returns new allocated substring at index with specific lenght from s
-			if (result[i] == NULL)
-				return (ft_tabledel(result, i));				// Steffen, warum wird hier memory gefreed aber nicht Zeile 86?
+			if (result[i] == NULL)								// wenn Alokalisierungsproblem bei substr auftaucht gibt es NULL in result
+				return (ft_tabledel(result, i));				// aufräumen wenn Programm fehler wirft
 			i++;												// **result weil ein Array of strings
 			s = next;											// erster * für Platz im Array, zweiter ** für Platz im String
 		}
 	}
-	result[i] = 0;												// Steffen, warum hier 0 setzen wenn Zeile 79 NULL abgefragt wurde?
+	result[i] = 0;												// return eine Liste von pointer auf strings
 	return (result);
 }
 

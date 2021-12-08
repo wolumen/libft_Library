@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)						// Steffen was ist der Unterschied putnbr und itoa?
+void	ft_putnbr_fd(int n, int fd)
 {
 	long	nb;
 
@@ -39,3 +39,5 @@ void	ft_putnbr_fd(int n, int fd)						// Steffen was ist der Unterschied putnbr 
 	ft_putchar_fd((nb % 10) + '0', fd);
 	return ;
 }
+
+// putnbr gibt string aus. itoa gibt string zurück, zum Weiterarbeiten

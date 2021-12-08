@@ -19,10 +19,10 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)		// n − is the number o
 	unsigned int	i;
 
 	i = 0;
-	d = (char *) dest;					// Steffen warum brauche ich hier kein unsigned char wie in den anderen mems?
+	d = (char *) dest;					// hier kein unsigned char weil es nicht im man steht
 	s = (char *) src;
-	if (dest == src || !n)				// Steffen, wie funktioniert die Abfrage dest == src hier nochmal? Byte pro Byte? kein Hochzählen?
-		return (dest);					// und steht dieses Verhalten im manual?
+	if (dest == src || !n)				// dest == src ist Abfrage der Adressen beider
+		return (dest);					// steht nicht im Handbuch
 	while (i < n)
 	{
 		d[i] = s[i];

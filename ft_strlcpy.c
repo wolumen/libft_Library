@@ -32,7 +32,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)	// similar to strncp
 		i++;
 	return (i);									// return der Funktion ist die Länge von src, wodurch das Abschneiden leicht erkannt werden kann: 
 }												// if der Rückgabewert ist größer oder gleich size, Kürzung aufgetreten
-												// Steffen, if size = 0 und return ist Länge von src, warum dann Kürzung?
+
 // #include <stdio.h>
 
 // int	main(void)

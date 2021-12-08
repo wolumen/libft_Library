@@ -60,3 +60,5 @@ char	*ft_itoa(int n)
 	str = ft_array(str, number, len);					// hier wird der leere str an ft_array zum schreiben übergeben
 	return (str);
 }
+
+// putnbr gibt string aus. itoa gibt string zurück, zum Weiterarbeiten

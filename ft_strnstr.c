@@ -21,14 +21,14 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n)		// locates
 		return (0);
 	while (*haystack)
 	{
-		if (n < ft_strlen(needle))
-			break ;													// Steffen was passiert nach break? warumd diese KOndition darüber?
+		if (n < ft_strlen(needle))									// falls der zudurchsuchende Bereich kleiner wird als die needle
+			break ;
 		if (ft_strlen(haystack) < ft_strlen(needle))				// wenn haystack ist kleiner als needle
 			break ;
 		if (ft_memcmp(haystack, needle, ft_strlen(needle)) == 0)	// memcmp returns 0 wenn gleich also == 0
-			return ((char *)haystack);								// Steffen, warum oben memcmp und nicht strcmp?
+			return ((char *)haystack);
 		n--;
-		haystack++;													// Steffen was passiert überhaupt in der Funktion?
+		haystack++;
 	}
 	return (NULL);
 }

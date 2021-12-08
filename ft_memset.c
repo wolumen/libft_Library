@@ -21,7 +21,7 @@ void	*ft_memset(void *str, int c, size_t n)		// setzt n Bytes in einem Array zu 
 	a = (unsigned char *)str;
 	while (i < n)
 	{
-		*a = (unsigned char) c;						// Steffen muss ich c casten oder nicht? (funktioniert auch ohne casten)				
+		*a = (unsigned char) c;				
 		a++;
 		i++;
 	}

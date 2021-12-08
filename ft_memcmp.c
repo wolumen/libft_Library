@@ -6,7 +6,7 @@
 /*   By: jpreissn <jpreissn@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 09:10:06 by jpreissn          #+#    #+#             */
-/*   Updated: 2021/12/07 15:55:04 by jpreissn         ###   ########.fr       */
+/*   Updated: 2021/12/07 20:39:02 by jpreissn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_memcmp(const void *str1, const void *str2, size_t n)		// n − number of 
 
 	if (!str1 && !str2 && !n)
 		return (0);
-	ptr1 = (unsigned char *) str1;
+	ptr1 = (unsigned char *) str1;					// hier unsigned char weil es im man steht
 	ptr2 = (unsigned char *) str2;
 	i = 0;
 	while (n--)
