@@ -59,13 +59,13 @@ static void			*ft_tabledel(char **array, int i)		// aufräumen wenn Programm feh
 
 char				**ft_split(char const *s, char c)
 {
-	char		**result;
-	int			i;
+	char		**result;										// **result weil ein Array of strings
+	int			i;												// erster * für Platz im Array, zweiter ** für Platz im String
 	const char	*next;
 
 	if (s == NULL)
 		return (NULL);
-	result = (char **)malloc(sizeof(char *) * (ft_count_splits_str(s, c) + 1));
+	result = (char **)malloc(sizeof(char *) * (ft_count_splits_str(s, c) + 1));			// zuerst splits zählen und genugpointer allocalisieren
 	if (result == NULL)											// Abfrage ob das Memoryallokalisieren funktioniert hat
 		return (NULL);
 	i = 0;
@@ -78,8 +78,8 @@ char				**ft_split(char const *s, char c)
 			result[i] = ft_substr(s, 0, next - s);				// returns new allocated substring at index with specific lenght from s
 			if (result[i] == NULL)								// wenn Alokalisierungsproblem bei substr auftaucht gibt es NULL in result
 				return (ft_tabledel(result, i));				// aufräumen wenn Programm fehler wirft
-			i++;												// **result weil ein Array of strings
-			s = next;											// erster * für Platz im Array, zweiter ** für Platz im String
+			i++;												
+			s = next;											
 		}
 	}
 	result[i] = 0;												// return eine Liste von pointer auf strings

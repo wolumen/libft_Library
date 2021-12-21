@@ -17,15 +17,15 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n)		// locates
 																			// where not more than n characters are searched.
 																			// Chars after `\0' are not searched.
 {
-	if (!*haystack && !*needle)
-		return (0);
+	if (*needle == '\0')													// das gleiche wie !*needle. Und !needle -> needle == NULL
+		return ((char *)haystack);
 	while (*haystack)
 	{
-		if (n < ft_strlen(needle))									// falls der zudurchsuchende Bereich kleiner wird als die needle
+		if (n < ft_strlen(needle))
 			break ;
-		if (ft_strlen(haystack) < ft_strlen(needle))				// wenn haystack ist kleiner als needle
+		if (ft_strlen(haystack) < ft_strlen(needle))
 			break ;
-		if (ft_memcmp(haystack, needle, ft_strlen(needle)) == 0)	// memcmp returns 0 wenn gleich also == 0
+		if (ft_memcmp(haystack, needle, ft_strlen(needle)) == 0)
 			return ((char *)haystack);
 		n--;
 		haystack++;

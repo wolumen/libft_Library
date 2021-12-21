@@ -12,29 +12,29 @@
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)	// returns a substring from the string ’s’.
-{																	// The substring begins at index ’start’ and is of maximum size ’len’.
-	char				*substr;
-	unsigned int		i;
+char	*ft_substr(char const *s, unsigned int start, size_t len) // erstellt neuen String
+{
+	char	*substr;
+	size_t	i;
 
 	if (!s)
 		return (NULL);
-	i = 0;
-	if (len > ft_strlen(s))							// wenn die Länge len größer ist als der eigentliche string
-		len = ft_strlen(s);
-	if (start >= ft_strlen(s))						// wenn der start Index hinter dem eigenlichen string liegt				
+	if (ft_strlen(s) < start)						// wenn start outside string allocate memory für neuen leeren string der dann zurückgegeben wird
 	{
-		substr = (char *)malloc(1);
-		if (substr == NULL)
+		substr = malloc(sizeof(char));
+		if (!substr)
 			return (NULL);
 		substr[0] = '\0';
 		return (substr);
 	}
-	substr = (char *)malloc(len + 1);
-	if (substr == NULL)
+	if (start + len > ft_strlen(s))					// wenn substring über die Länge des strings laufen würde
+		len = ft_strlen(s) - start;					// wird Länge gekürzt
+	substr = malloc(sizeof(char) * (len + 1));
+	if (!substr)
 		return (NULL);
-	while (i++ < start)								// i war 0 und wird zu dem Start index hochgezählt
-		s++;
-	ft_strlcpy(substr, s, len + 1);					// in strlcpy erfolgt immer null terminierung
+	i = 0;
+	while (++i - 1 < len)
+		*(substr + i - 1) = *(s + start + i - 1);
+	*(substr + i - 1) = '\0';
 	return (substr);
 }

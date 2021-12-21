@@ -33,7 +33,7 @@ char	*ft_strtrim( char const *s1, char const *set)			// Set bedeutet jeder einze
 	i = 0;
 	while (start < end)
 		trimmedstr[i++] = s1[start++];
-	trimmedstr[i] = 0;
+	trimmedstr[i] = 0;											// = '\0' STEFFEN das andere geht nicht, oder geht aber 0 = 4 Byte and \0 1 Byte??
 	return (trimmedstr);
 }
 

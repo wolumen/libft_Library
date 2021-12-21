@@ -1,0 +1,11 @@
+copy the libft.a & libft.h in this directory
+
+make
+./a.out
+valgrind ./a.out
+
+for BONUS:
+
+make bonus
+./b.out
+valgrind ./b.out
