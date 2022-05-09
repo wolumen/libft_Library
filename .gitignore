@@ -1,0 +1,4 @@
+*.o
+libft.a
+tests
+Valgrind_tests
