@@ -3,8 +3,8 @@
 ## Description
 
 This project is all about recoding a set of the **libc** functions and some other very useful functions to create our own library.  
-The goal is to gain a deeper understanding of C programming and to get familiar with dynamic memory usage, pointers and their applications, as well as different string manipulation technics.   
-The Bonus covers single linked lists and function pointers.
+The goal is to gain a deeper understanding of C programming and to get familiar with dynamic memory usage, pointers and their applications, as well as different string manipulation technics. The Bonus covers single linked lists and function pointers.   
+All code has to compile with -Wall -Werror -Wextra and to be free of memory possible leaks.
 
 ### Allowed functions
 
@@ -36,7 +36,7 @@ The Bonus covers single linked lists and function pointers.
   lstnew, lstadd_front, lstsize, lstlast,
   lstadd_back, lstdelone, lstclear, lstiter, lstmap
   ```
-To be able to distinguish the functions, the self-written functions were provided with the prefix ft.
+To be able to distinguish the self-written functions, they have been prefixed with ft.
 
 
 ## Objectives
@@ -67,6 +67,9 @@ Run the following commands:
 * To compile the libft.a file
 		
 		make
+* To compile with the bonus files
+		
+		make bonus
 * To remove objects:
 
 		make clean
@@ -76,4 +79,6 @@ Run the following commands:
 * To re-compile:
 
 		make re
+
+
 
