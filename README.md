@@ -4,7 +4,7 @@
 
 This project is all about recoding a set of the **libc** functions and some other very useful functions to create our own library.  
 The goal is to gain a deeper understanding of C programming and to get familiar with dynamic memory usage, pointers and their applications, as well as different string manipulation technics. The Bonus covers single linked lists and function pointers.   
-All code has to compile with -Wall -Werror -Wextra and to be free of memory possible leaks.
+All code has to compile with -Wall -Werror -Wextra and to be free of memory leaks. The written code must follow certain rules, which are specified in a standard of the school 42.
 
 ### Allowed functions
 

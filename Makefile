@@ -70,9 +70,9 @@ INC		=	inc/
 CC		=	gcc
 CFLAGS	=	-Wall -Wextra -Werror -g
 
-.PHONY: all clean fclean re so
+.PHONY: all clean fclean re so bonus
 
-all: $(NAME) bonus
+all: $(NAME)
 
 $(OBJ): $O%.o: $S%.c
 	@mkdir -p $O
