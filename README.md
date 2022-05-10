@@ -6,7 +6,7 @@ This project is all about recoding a set of the **libc** functions and some othe
 The goal is to gain a deeper understanding of C programming and to get familiar with dynamic memory usage, pointers and their applications, as well as different string manipulation technics.   
 The Bonus covers single linked lists and function pointers.
 
-Allowed functions
+### Allowed functions
 
  - write
  - malloc
@@ -58,7 +58,7 @@ To be able to distinguish the functions, the self-written functions were provide
 ### Clone the repository
 ```shell
 git clone git@github.com:wolumen/libft_Library.git
-cd libft
+cd libft_Library
 ```
 
 ### Compiling
@@ -66,14 +66,14 @@ Run the following commands:
 
 * To compile the libft.a file
 		
-		$> make
+		make
 * To remove objects:
 
-		$> 'make clean'
+		make clean
 * To remove objects and binary file:
 
-		$> make fclean
+        make fclean
 * To re-compile:
 
-		$> make re
+		make re
 
